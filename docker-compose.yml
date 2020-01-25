@@ -43,10 +43,6 @@ x-snuba-defaults: &snuba_defaults
     UWSGI_IGNORE_SIGPIPE: 'true'
     UWSGI_IGNORE_WRITE_ERRORS: 'true'
     UWSGI_DISABLE_WRITE_EXCEPTION:  'true'
-networks:
-  default:
-    external:
-      name: bridge
 services:
   smtp:
     << : *restart_policy
@@ -140,6 +136,7 @@ services:
     << : *sentry_defaults
     ports:
       - '9000:9000/tcp'
+    network_mode: bridge
   cron:
     << : *sentry_defaults
     command: run cron
