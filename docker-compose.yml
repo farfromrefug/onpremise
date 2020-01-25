@@ -135,7 +135,7 @@ services:
   web:
     << : *sentry_defaults
     ports:
-      - '9000:9000/tcp'
+      - '2472:9000/tcp'
     network_mode: bridge
   cron:
     << : *sentry_defaults
