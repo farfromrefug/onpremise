@@ -43,6 +43,9 @@ x-snuba-defaults: &snuba_defaults
     UWSGI_IGNORE_SIGPIPE: 'true'
     UWSGI_IGNORE_WRITE_ERRORS: 'true'
     UWSGI_DISABLE_WRITE_EXCEPTION:  'true'
+networks:
+  bridge:
+    driver: bridge
 services:
   smtp:
     << : *restart_policy
