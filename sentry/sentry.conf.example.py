@@ -158,6 +158,7 @@ SENTRY_WEB_OPTIONS = {
     # This is needed to prevent https://git.io/fj7Lw
     "uwsgi-socket": None,
     "http-keepalive": True,
+    "http-chunked-input": True,
     "memory-report": False,
     # 'workers': 3,  # the number of web workers
 }
@@ -187,18 +188,16 @@ SENTRY_FEATURES.update(
         for feature in (
             "organizations:discover",
             "organizations:events",
+            "organizations:discover-basic",
+            "organizations:discover-query",
+            "organizations:events-v2",
             "organizations:global-views",
             "organizations:integrations-issue-basic",
             "organizations:integrations-issue-sync",
             "organizations:invite-members",
-            "organizations:new-issue-ui",
-            "organizations:repos",
-            "organizations:require-2fa",
-            "organizations:sentry10",
             "organizations:sso-basic",
             "organizations:sso-rippling",
             "organizations:sso-saml2",
-            "organizations:suggested-commits",
             "projects:custom-inbound-filters",
             "projects:data-forwarding",
             "projects:discard-groups",
